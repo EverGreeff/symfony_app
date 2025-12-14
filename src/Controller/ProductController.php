@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use App\Repository\ProductRepository;
 use App\Entity\Product;
+use App\Form\ProductType;
 
 final class ProductController extends AbstractController
 {
@@ -39,6 +40,19 @@ final class ProductController extends AbstractController
     #[Route('product/new', name: 'product_new')]
     public function new(): Response 
     {
-        return $this->render('product/new.html.twig');
+        $form = $this->createForm(ProductType::class);
+        
+        /*
+        
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') 
+        {
+                dd($_POST);
+        }
+
+        */
+
+        return $this->render('product/new.html.twig', [
+            'form' => $form
+        ]);
     }
 }

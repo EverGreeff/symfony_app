@@ -4,4 +4,19 @@
 
 <h1>New Product</h1>
 
+{# Renders the entire FORM
+{{ form(form) }}
+#}
+
+{{ form_start(form) }}
+    {{ form_row(form.name )}}
+
+    {{ form_row(form.description )}}
+
+    {{ form_row(form.size )}}
+
+    {{ form_row(form.save , {'label' : 'Save my new product'})}} {# Sobrescreve o que veio do ProductType #}
+
+{{ form_end(form) }}
+
 {% endblock %}
