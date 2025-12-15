@@ -1,0 +1,10 @@
+{{ form_start(form, {'attr': {'novalidate': 'novalidate' }}) }}
+    {{ form_row(form.name )}}
+
+    {{ form_row(form.description )}}
+
+    {{ form_row(form.size )}}
+
+    {{ form_row(form.save , {'label' : 'Save my new product'})}} {# Sobrescreve o que veio do ProductType #}
+
+{{ form_end(form) }}
